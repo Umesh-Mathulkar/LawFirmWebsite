@@ -1,0 +1,39 @@
+.description-container img {
+  max-width: 600px;
+  max-height: 400px;
+
+
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  padding: 3% 5%;
+
+}
+
+.description-container .floating-image {
+  max-width: 700px;
+}
+
+.description-container .floating-image.right {
+  float: left;
+}
+
+#htop {
+  padding-top: 10px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  color: maroon;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.nav-item {
+  padding: 10px;
+}
