@@ -1,4 +1,8 @@
-
+*{
+    margin: 0;
+    padding: 0;
+    
+}
 
 /* carousel*/
 .first{
@@ -61,9 +65,11 @@
         height: 60vh;
       background-color: rgb(209, 191, 167);
     }
+    
     .contactMain .container{
         height: 60vh;
     }
+    
     .contact input{
         display: block;
         text-align: center;
@@ -77,14 +83,21 @@
     .contact{
         height: 35vh;
         
-        width: 400px;
+        width: auto;
+        padding: 10px;
        
         
+    }
+    .inputs:hover{
+        box-shadow: -4px -4px 10px black;
+        transition-duration: 1s;
     }
     .inputs{
         background-color: rgb(141, 141, 141);
         height: 55vh;
         border-radius: 6px;
+        box-shadow: 10px 10px 10px black;
+        transition-duration: 0.7s;
     }
 
 
@@ -216,8 +229,42 @@
 
 /* civil end */
 
+/* dark&light */
+.hide{
+    display: none;
+}
+#dark{
+   background-color: rgb(48, 48, 48);
+   color: white;
+}
+.colorr{
+    color: white!important;
+}
+.collapse button{
+    border: none;
+    border-radius: 8px;
+    padding: 1%;
+}
+/* dark&light end */
 
 
+
+/* up */
+.up{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.397);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-size: 34px;
+    margin: 0 10px 10px 0;
+    box-shadow: 1px 1px 7px rgb(110, 110, 110);
+}
+
+/* up end */
 
 /* responsive */
 @media only screen and (max-width:992px){
@@ -236,4 +283,7 @@
     }
     .footMain{
         height: 90vh;}
+     .complImg{
+        background-position: center;
+        }
 }

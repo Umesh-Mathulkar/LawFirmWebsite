@@ -81,7 +81,7 @@ function navigate(element) {
                     <input type="text" placeholder="Subject">
                     <input type="textarea" placeholder="Message">
                 </div>
-               <div style="text-align: center;"> <button type="button" class="btn btn-danger">Submit</button></div>
+               <div style="text-align: center; margin-top:20px"> <button type="button" class="btn btn-danger">Submit</button></div>
             </div>
         </div>
     </div>
@@ -457,7 +457,7 @@ else if (element == "contact") {
                  <input type="text" placeholder="Subject">
                  <input type="textarea" placeholder="Message">
              </div>
-            <div style="text-align: center;"> <button type="button" class="btn btn-danger">Submit</button></div>
+            <div style="text-align: center; margin-top:20px"> <button type="button" class="btn btn-danger">Submit</button></div>
          </div>
      </div>
  </div>
@@ -476,3 +476,57 @@ else if (element == "contact") {
 };
 
 
+function backChange(){
+    document.body.style.backgroundColor="black";
+    document.body.style.color="white";
+    document.getElementById("dark").classList.add("hide");
+    document.getElementById("light").classList.remove("hide");
+    
+    document.getElementById("services").classList.add("colorr");
+ document.getElementById("home").classList.add("colorr");
+ document.getElementById("contact").classList.add("colorr");
+ document.getElementById("about").classList.add("colorr");
+ document.getElementById("copy").classList.add("colorr");
+ 
+}
+function backOriginal(){
+    document.body.style.backgroundColor="white";
+    document.body.style.color="black";
+    document.getElementById("dark").classList.remove("hide");
+    document.getElementById("light").classList.add("hide");
+    document.getElementById("services").classList.remove("colorr");
+ document.getElementById("home").classList.remove("colorr");
+ document.getElementById("contact").classList.remove("colorr");
+ document.getElementById("about").classList.remove("colorr");
+ document.getElementById("copy").classList.remove("colorr");
+}
+
+
+
+// weather
+let y = document.getElementById('weather');
+function geolocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition)
+    } else {
+        x.innerText = "Geo Not Supported"
+    }
+};
+
+function showPosition(data) {
+
+    let lat = data.coords.latitude;
+    let lon = data.coords.longitude;
+    const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+    //api calling
+    fetch(url, { method: 'GET' })
+        //return promise
+        .then((res) => res.json())
+        //return data
+        .then((data) => {
+
+            let cityName = data.city.name;
+            let temp = data.list[0].temp.day
+            y.innerHTML = `<h5 style="color:brown;background-color:lightgrey;padding:2%;margin-right:10px;text-align:center;border-radius:8px;width:200px">${cityName}  ${temp} °C</h5>`
+        })
+};

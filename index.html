@@ -10,15 +10,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="./images/dhbhaf.png" type="image/x-icon">
+
 </head>
 
-<body onload="navigate('home')">
+<body onload="navigate('home'),geolocation()">
 
     <!-- navbar -->
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a onclick="navigate('home')" type="button" class="navbar-brand"><img src="./images/dhbhaf.png" alt=""></a>
+                <a onclick="navigate('home')" type="button" class="navbar-brand"><img src="./images/dhbhaf.png"
+                        alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +31,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a onclick="navigate('home')" type="button" class="nav-link" id="home" aria-current="page">Home</a>
+                            <a onclick="navigate('home')" type="button" class="nav-link" id="home"
+                                aria-current="page">Home</a>
                         </li>
                         <li class="nav-item">
                             <a onclick="navigate('about')" type="button" id="about" class="nav-link">About Us</a>
@@ -38,18 +43,27 @@
                                 Services
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a onclick="navigate('visa')" type="button" id="visa" class="dropdown-item">Immigration Visa Services</a>
+                                <li><a onclick="navigate('visa')" type="button" id="visa"
+                                        class="dropdown-item">Immigration Visa Services</a>
                                 </li>
-                                <li><a onclick="navigate('setup')" type="button" id="company" class="dropdown-item">Company setup Services</a></li>
+                                <li><a onclick="navigate('setup')" type="button" id="company"
+                                        class="dropdown-item">Company setup Services</a></li>
 
-                                <li><a onclick="navigate('compl')" type="button" id="compliance" class="dropdown-item">Compliance Management</a></li>
-                                <li><a onclick="navigate('civil')" type="button" id="civil" class="dropdown-item">Civil Mediation Services</a></li>
+                                <li><a onclick="navigate('compl')" type="button" id="compliance"
+                                        class="dropdown-item">Compliance Management</a></li>
+                                <li><a onclick="navigate('civil')" type="button" id="civil" class="dropdown-item">Civil
+                                        Mediation Services</a></li>
 
                             </ul>
                         </li>
-                        <li class="nav-item"><a type="button" onclick="navigate('contact')" id="contact" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a type="button" onclick="navigate('contact')" id="contact"
+                                class="nav-link">Contact</a></li>
 
                     </ul>
+                  
+                    <div id="weather"></div>
+                    <button id="dark" class="" onclick="backChange()" type="button">Dark Mode</button>
+                    <button onclick="backOriginal()" id="light" class="hide" type="button">Light Mode</button>
 
                 </div>
             </div>
@@ -94,24 +108,26 @@
                         <div class="col-lg-4 mt-2">
                             <div class="social">
                                 <h4>Social Links</h4>
-                                <a href="#">Facebok</a>
-                                <a href="#">Twitter</a>
-                                <a href="#">Instagram</a>
+                                <a href="#"><i class="fa fa-facebook"></i> Facebok</a>
+                                <a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+                                <a href="#"><i class="fa fa-instagram"></i> Instagram</a>
 
                             </div>
                         </div>
                         <div class="col-lg-4 mt-2">
                             <h4>Contact</h4>
-                            <p>Umhlanga Durban KwaZulu-Natal South Africa 4051</p>
-                            <h6>info@dhbhaf.com</h6>
-                            <h6> +27 62 675 7151</h6>
+                            <p><i class="fa fa-address-card"></i> Umhlanga Durban KwaZulu-Natal South Africa</p>
+                            <h6><i class="fa fa-envelope"></i> info@dhbhaf.com</h6>
+                            <h6><i class="fa fa-phone"></i> +27 62 675 7151</h6>
                         </div>
                     </div>
                 </div>
             </div>
+           
         </div>
     </footer>
-
+    <div style="text-align: center;"><p id="copy" style="color: black;">&#169;DHBAF:2021</p></div>
+    <div type="button" class="up"><a href="#"><i class="fa fa-angle-double-up"></i></a></div>
 
 
 
